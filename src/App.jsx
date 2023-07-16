@@ -1,83 +1,77 @@
-import { useState } from 'react'
+import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from "../components/header"
-import Posts from "../components/Posts"
-import GlobalStyle from "./GlobalStyle"
+import Header from '../components/header';
+import PostBox from '../components/PostBox';
 
-// const GlobalStyle = createGlobalStyle`
-//   /* http://meyerweb.com/eric/tools/css/reset/ 
-//    v2.0 | 20110126
-//    License: none (public domain)
-// */
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 0 20px;
+`;
 
-// html, body, div, span, applet, object, iframe,
-// h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-// a, abbr, acronym, address, big, cite, code,
-// del, dfn, em, img, ins, kbd, q, s, samp,
-// small, strike, strong, sub, sup, tt, var,
-// b, u, i, center,
-// dl, dt, dd, ol, ul, li,
-// fieldset, form, label, legend,
-// table, caption, tbody, tfoot, thead, tr, th, td,
-// article, aside, canvas, details, embed, 
-// figure, figcaption, footer, header, hgroup, 
-// menu, nav, output, ruby, section, summary,
-// time, mark, audio, video {
-// 	margin: 0;
-// 	padding: 0;
-// 	border: 0;
-// 	font-size: 100%;
-// 	font: inherit;
-// 	vertical-align: baseline;
-// }
-// /* HTML5 display-role reset for older browsers */
-// article, aside, details, figcaption, figure, 
-// footer, header, hgroup, menu, nav, section {
-// 	display: block;
-// }
-// body {
-// 	line-height: 1;
-// }
-// ol, ul {
-// 	list-style: none;
-// }
-// blockquote, q {
-// 	quotes: none;
-// }
-// blockquote:before, blockquote:after,
-// q:before, q:after {
-// 	content: '';
-// 	content: none;
-// }
-// table {
-// 	border-collapse: collapse;
-// 	border-spacing: 0;
-// }
-// /* body {        
-//     background-color: ${(props) => props.theme.bgColor};
-//     color:${(props) => props.theme.textColor}
-//   } */
-// `
+const MainContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 40px;
+`;
 
-function App() {
-//   const [isDarkMode, setIsDarkMode] = useState(false);
+const PostContainer = styled.div`
+  width: 180px;
+  margin: 20px;
+  padding: 20px;
+  background-color: blue;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
 
-//   const toggleDarkMode = () => {
-//     setIsDarkMode((prev) => !prev);
-//   };
+const PostTitle = styled.h2`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
 
+const PostContent = styled.p`
+  font-size: 16px;
+`;
+
+const posts = [
+  {
+    id: 1,
+    title: 'Post 1',
+    content: 'This is the first post.',
+  },
+  {
+    id: 2,
+    title: 'Post 2',
+    content: 'This is the second post.',
+  },
+  {
+    id: 3,
+    title: 'Post 3',
+    content: 'This is the third post.',
+  },
+  // 추가 포스트들...
+];
+
+const App = () => {
   return (
-    <>
-	<GlobalStyle/>
-			<Header/>
-			<div>MainPosts section</div>
-			<Posts/>
+    <Container>
+	  <Header/>
+      {/* <MainContainer>
+        {posts.map((post) => (
+          <PostContainer key={post.id}>
+            <PostTitle>{post.title}</PostTitle>
+            <PostContent>{post.content}</PostContent>
+          </PostContainer>
+        ))}
+      </MainContainer> */}
+	  <PostBox/>
+    </Container>
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;

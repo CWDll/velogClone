@@ -8,24 +8,48 @@ const Head = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
+  padding: 20px 0;
 `;
 
 const Title = styled.div`
   font-size: 32px;
+  font-weight: bold;
 `;
 
 const Buttons = styled.div`
     display: flex;
     justify-content: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+`;
+
+const MoonIcon = styled(FontAwesomeIcon)`
+  &:hover {
+    color: #888;
+  }
+  font-size: 25px;
+  margin-left: 20px;
+`;
+
+const SearchIcon = styled(FontAwesomeIcon)`
+  font-size: 25px;
+  margin-left: 20px;
 `;
 
 const LoginButton = styled.div`
-    width: 50px;
+    width: 70px;
     height: 25px;   
     border-radius: 10px;
     background-color: #FFFFFF;
     color:black;
+    text-align: center;
+    font-weight: 500;
+    margin-left: 20px;
 `;
+
 function Header() {
     return (
         <Head>
@@ -33,8 +57,8 @@ function Header() {
                 Velog
             </Title>
             <Buttons>
-                <FontAwesomeIcon icon={faMoon}/>
-                <FontAwesomeIcon icon={faSearch} />
+                <MoonIcon icon={faMoon}/>
+                <SearchIcon icon={faSearch} />
                 <LoginButton>로그인</LoginButton>
             </Buttons>
         </Head>
