@@ -15,26 +15,26 @@ const ProfileImage = styled.img`
     border-radius: 50%;
 `;
 
-const posts = [
-    {
-      id: 1,
-      userName: 'writer',
-      profileImageUrl: '../images/profile/child1.jpg',
-      likes: '144',
-    },
-    {
-      id: 2,
-      userName: 'changjoon',
-      profileImageUrl: '../images/profile/child2.jpg',
-      likes: '25',
-    },
-    {
-      id: 3,
-      userName: 'dongguk',
-      profileImageUrl: '../images/profile/child3.jpg',
-      likes: '79',
-    },
-  ];
+// const posts = [
+//     {
+//       id: 1,
+//       userName: 'writer',
+//       profileImageUrl: '../images/profile/child1.jpg',
+//       likes: '144',
+//     },
+//     {
+//       id: 2,
+//       userName: 'changjoon',
+//       profileImageUrl: '../images/profile/child2.jpg',
+//       likes: '25',
+//     },
+//     {
+//       id: 3,
+//       userName: 'dongguk',
+//       profileImageUrl: '../images/profile/child3.jpg',
+//       likes: '79',
+//     },
+//   ];
 
 function PostFooter() {
     return (
