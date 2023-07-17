@@ -67,3 +67,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+ /* body {
+  margin: 0;
+  padding-top: 50px; /* Header의 높이에 맞게 조정해야 합니다 */
+} */
+
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}

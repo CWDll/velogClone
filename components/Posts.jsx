@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { post } from "./post";
+import { information } from "./information";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const MainContainer = styled.div`
@@ -71,7 +71,7 @@ const HeartIcon = styled(FontAwesomeIcon)`
 function Post() {
     return (
     <MainContainer>
-        {post.map((post) => (
+        {information.map((post) => (
           <PostContainer key={post.id}>
             <PostImage src={post.imageUrl} alt="Post" />
             <PostTitle>{post.title}</PostTitle>

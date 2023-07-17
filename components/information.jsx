@@ -1,4 +1,4 @@
-export const post = [
+export const information = [
     {
       id: 1,
       title: 'React를 공부해보자',

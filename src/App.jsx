@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import BodyButtons from '../components/BodyButtons';
 import Header from '../components/header';
+import MainPost from '../components/MainPost';
 import PostBox from '../components/PostBox';
 
 const Container = styled.div`
@@ -17,9 +18,9 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-	    {/* <Header/> */}
-      <BodyButtons/>
-	    <PostBox/>
+      {/* <BodyButtons/>
+	    <PostBox/> */}
+      <MainPost/>
     </Container>
   );
 };
