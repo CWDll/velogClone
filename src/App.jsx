@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import BodyButtons from '../components/BodyButtons';
 import Header from '../components/header';
 import PostBox from '../components/PostBox';
 
@@ -16,7 +17,8 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-	    <Header/>
+	    {/* <Header/> */}
+      <BodyButtons/>
 	    <PostBox/>
     </Container>
   );
