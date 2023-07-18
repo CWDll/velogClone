@@ -10,6 +10,7 @@ const MainContainer = styled.div`
   align-items: flex-start;
   width: 100%;
   margin-top: 40px;
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 
 const PostContainer = styled.div`
@@ -20,6 +21,7 @@ const PostContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 
 const PostTitle = styled.h2`

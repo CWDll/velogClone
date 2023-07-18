@@ -7,6 +7,16 @@ import PostBox from '../components/PostBox';
 import { information } from "../components/information";
 import { lightTheme, darkTheme } from "../components/themes";
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) => theme.backgroundColor};
+    color: ${({ theme }) => theme.color};
+    border-color: ${({ theme }) => theme.borderColor};
+  }
+
+  /* 다른 요소들의 전역 스타일 */
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,6 +25,9 @@ const Container = styled.div`
   width: 95vw;
   overflow-x: hidden;
   height: 100%;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.color};
+  border-color: ${({ theme }) => theme.borderColor};
 `;
 
 function App() {
@@ -37,6 +50,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Container>
         <Header onClickTitle={handleClickTitle} onToggleTheme={toggleTheme} />
         {selectedPost ? (

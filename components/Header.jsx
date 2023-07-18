@@ -15,6 +15,7 @@ const Head = styled.div`
   width: 100%;
   align-items: center;
   padding: 20px 0;
+  background-color: ${({ theme }) => theme.backgroundColor};
   z-index: 9999;
   /* add other styles */
 `;
@@ -39,11 +40,13 @@ const MoonIcon = styled(FontAwesomeIcon)`
   }
   font-size: 25px;
   margin-left: 20px;
+  color: ${({ theme }) => theme.color};
 `;
 
 const SearchIcon = styled(FontAwesomeIcon)`
   font-size: 25px;
   margin-left: 20px;
+  color: ${({ theme }) => theme.color};
 `;
 
 const LoginButton = styled.div`
@@ -55,6 +58,7 @@ const LoginButton = styled.div`
   text-align: center;
   font-weight: 500;
   margin-left: 20px;
+  
 `;
 
 function Header({ onClickTitle, onToggleTheme }) {
