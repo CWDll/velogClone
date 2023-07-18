@@ -1,5 +1,6 @@
+import React from "react";
 import styled from "styled-components";
-import Post from "./Posts";
+import Post from "./Post";
 import PostFooter from "./PostFooter";
 
 const MainContainer = styled.div`
@@ -11,13 +12,13 @@ const MainContainer = styled.div`
   margin-top: 40px;
 `;
 
-function PostBox() {
-    return (
-      <MainContainer>
-        <Post/>
-        {/* <PostFooter/> */}
-      </MainContainer>
-    )
+function PostBox({ posts, onClickPost }) {
+  return (
+    <MainContainer>
+      <Post posts={posts} onClickPost={onClickPost} />
+      {/* <PostFooter/> */}
+    </MainContainer>
+  );
 }
 
 export default PostBox;

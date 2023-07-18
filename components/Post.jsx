@@ -1,6 +1,6 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { information } from "./information";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const MainContainer = styled.div`
@@ -19,6 +19,7 @@ const PostContainer = styled.div`
   background-color: black;
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: pointer;
 `;
 
 const PostTitle = styled.h2`
@@ -43,14 +44,14 @@ const PostImage = styled.img`
 `;
 
 const PostInfo = styled.span`
-    font-size: 8px;
-    color: grey;
+  font-size: 8px;
+  color: grey;
 `;
 
 const ProfileImage = styled.img`
-    width: 20px;
-    border-radius: 50%;
-    margin-top: 5px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 5px;
 `;
 
 const PostFooter = styled.div`
@@ -68,30 +69,32 @@ const HeartIcon = styled(FontAwesomeIcon)`
   font-size: 15px;
 `;
 
-function Post() {
-    return (
+function Post({ posts, onClickPost }) {
+  return (
     <MainContainer>
-        {information.map((post) => (
-          <PostContainer key={post.id}>
-            <PostImage src={post.imageUrl} alt="Post" />
-            <PostTitle>{post.title}</PostTitle>
-            <PostContent>{post.content}</PostContent>
-            <PostInfo>{post.date}, {post.comment}</PostInfo>
-            <PostFooter>
-              <div>
-                <ProfileImage src={post.profileImageUrl} alt="Post" />
-                <span>by  </span>
-                {post.userName}
-              </div>
-              <div>
-                <HeartIcon icon={faHeart} />
-                {post.likes}
-              </div>
-            </PostFooter>
-          </PostContainer>
-        ))}
+      {posts.map((post) => (
+        <PostContainer key={post.id} onClick={() => onClickPost(post.id)}>
+          <PostImage src={post.imageUrl} alt="Post" />
+          <PostTitle>{post.title}</PostTitle>
+          <PostContent>{post.content}</PostContent>
+          <PostInfo>
+            {post.date}, {post.comment}
+          </PostInfo>
+          <PostFooter>
+            <div>
+              <ProfileImage src={post.profileImageUrl} alt="Post" />
+              <span>by </span>
+              {post.userName}
+            </div>
+            <div>
+              <HeartIcon icon={faHeart} />
+              {post.likes}
+            </div>
+          </PostFooter>
+        </PostContainer>
+      ))}
     </MainContainer>
-    )
+  );
 }
 
 export default Post;

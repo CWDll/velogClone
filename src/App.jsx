@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from "react";
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import BodyButtons from '../components/BodyButtons';
 import Header from '../components/header';
 import MainPost from '../components/MainPost';
 import PostBox from '../components/PostBox';
+import { information } from "../components/information";
+import { lightTheme, darkTheme } from "../components/themes";
 
 const Container = styled.div`
   display: flex;
@@ -15,14 +17,36 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const App = () => {
+function App() {
+  const [selectedPostId, setSelectedPostId] = useState(null);
+  const [theme, setTheme] = useState(lightTheme);
+
+  const handleClickPost = (postId) => {
+    setSelectedPostId(postId);
+  };
+
+  const handleClickTitle = () => {
+    setSelectedPostId(null);
+  };
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme));
+  };
+
+  const selectedPost = information.find((post) => post.id === selectedPostId);
+
   return (
-    <Container>
-      {/* <BodyButtons/>
-	    <PostBox/> */}
-      <MainPost/>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Header onClickTitle={handleClickTitle} onToggleTheme={toggleTheme} />
+        {selectedPost ? (
+          <MainPost post={selectedPost} />
+        ) : (
+          <PostBox posts={information} onClickPost={handleClickPost} />
+        )}
+      </Container>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

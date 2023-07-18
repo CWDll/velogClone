@@ -7,7 +7,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <div>
-      <Header />
+      {/* <Header /> */}
       <App />
     </div>
   </React.StrictMode>,
