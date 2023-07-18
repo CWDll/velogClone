@@ -1,8 +1,8 @@
 export const information = [
     {
       id: 1,
-      title: 'React를 공부해보자',
-      content: 'styled-component를 익숙해지는 시간이었다. css 변수도 사용할 수 있고, props도 공통으로 사용할 수 있어서 flex속성이나, 반응형 사이즈 같은 것을 저장해서 편하게 갖다썼다. 그리고 box-sizing 속성을 처음으로 사용했다. padding을 주면 그 사이즈만큼 전체 크기가 커져서 안맞는 경우가 있었는데, box-sizing:border-size 속성으로 해결했다.',
+      title: 'Styled-Components',
+      content: 'styled-component를 사용하여 컴포넌트화를 하는 데 익숙해지는 시간이었다. 아직 전체적으로 스타일을 통일하여 보기 예쁜 UI를 만드는 데에는 어려움이 있지만, 컴포넌트를 나누어 사용하는 데에는 연습이 되었다.',
       imageUrl: '../images/posts/imageOfReact.png',
       date: '2023.07.17',
       comment: '1개의 댓글',
@@ -12,9 +12,9 @@ export const information = [
     },
     {
       id: 2,
-      title: 'Tea time을 가지자',
-      content: '불교학과를 다니면 매일매일 차를 내려마실 수 있다는 것을 아시나요? 저희는 전공 수업에 다도가 들어있을 만큼 차를 아주 중요하게 생각합니다. 저도 학생시절부터 차를 마셨는데, 생각보다 나쁘지 않습니다.',
-      imageUrl: '../images/posts/teaTime.jpg',
+      title: 'React-Router-Dom',
+      content: '이번엔 React-Router-Dom을 사용하는데 다 적응이 안돼서 Post의 id의 유무에 따라 게시글이 있는 페이지로 이동하도록 만들었다. 근데 지금 만든거에 문제가 있는데, light theme에서는 정상작동하는데 black theme에서는 BodyButtons의 내용들이 나온다. 안되는데..',
+      imageUrl: '../images/posts/reactRouter.png',
       date: '2023.07.15',
       comment: '5개의 댓글',
       userName: 'changjoon',
@@ -23,9 +23,9 @@ export const information = [
     },
     {
       id: 3,
-      title: '강아지가 벌에 쏘였다.',
-      content: '이 사진은 시골에 사는 강아지가 벌에 쏘인 채 퉁퉁 부은 얼굴을 가지고 앉아있는 사진이다. 구글에 이미지를 검색해보면 이 사진 말고도 몇 가지 귀여운 강아지들이 나오곤 한다.',
-      imageUrl: '../images/posts/dog.jpg',
+      title: '노마드 코더 강의 내용 정리 게시물',
+      content: 'useState로 쓰는 Hook은 useInput(기본적으로 input을 업데이트 한다.)과 useTab이 있으며 기억해야 하는 것은 useState는 모든 것을 새로고침하고 re-render을 한다는 것을 기억하면 된다. 반드시 render()가 있어야 하는게 아니라, useState만으로도 가능하다는 것이다. useEffect에서는 useTitle, useClick(누군가 element를 클릭했을 때 알려주는 것), useConfirm(사용자가 무언가를 하기 전에 확인하는 것(무언가를 저장하거나 삭제할 때 브라우저가 일단 막고 confirm하는 것과 비슷), usePreventLeave(저장하지 않고 창을 닫을 때 확인하는 것도 이걸로 만들 수 있다. 여기선 맨 윗줄에 eventPreventDefault(); 가 필요하다!), useBeforeLeave(탭을 닫을 때 실행되는 function 또는 mouseLeave의 상황에서도 이벤트를 만들 수 있다.), useFadeIn(하나의 Element를 가진다. 엘리멘트를 자연스럽게 나오게 만들 수 있음. css로도 가능하지만 여기선 hook과 animation으로 해보았다. delay와 duration, timing 등으로 원하는 설정이 가능하다.), useNetwork(navigator가 online 또는 offline되는것을 막음. 인터넷이 끊기면 창이 바뀌는 것과 같은 거라고 보면 됨.), useScroll(유저가 스크롤해서 지나갈 때 변화를 줄 수 있음.), useFullscreen(동작을 통해 full screen으로 만드는 것을 가능하게 함. full screen에서 빠져나가는 것도 가능.), useNotification(알람이 실행되는 function만들기. 단순 alert가 아니라 사용자에게 알람을 보낸다. hook을 쓰지 않아도 만들 수 있음.) 등의 여러 Hook들이 있다.',
+      imageUrl: '../images/posts/nomad.png',
       date: '2023.07.10',
       comment: '0개의 댓글',
       userName: 'dongguk',

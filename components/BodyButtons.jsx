@@ -29,10 +29,28 @@ const TopicButton = styled.button`
     width: 100px;
     height: 100%;
     color: white;
-    background-color: ${props => props.active ? 'black' : 'red'};
+    /* background-color: ${props => props.active ? 'black' : 'red'}; */
     text-align: center;
     display: flex;
-    border-bottom: ${props => props.active ? '2px solid white' : 'none'};
+    /* border-bottom: ${props => props.active ? '2px solid white' : 'none'}; */
+    background-color: ${({ theme }) => theme.backgroundColor};
+    color: ${({ theme }) => theme.color};
+    border-color: ${({ theme }) => theme.borderColor};
+`;
+
+const WeekBox = styled.button`
+    width: 100px;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    /* background-color: ${props => props.active ? 'black' : 'red'}; */
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: ${props => props.active ? '2px solid white' : 'none'}; */
+    background-color: grey;
+    color: ${({ theme }) => theme.color};
+    border-color: ${({ theme }) => theme.borderColor};
 `;
 
 const LeftButton = styled.div`
@@ -68,10 +86,10 @@ function BodyButtons() {
                     <Text>최신</Text>
                 </TopicButton>
 
-                <TopicButton>
+                <WeekBox>
                     <Text>이번 주</Text>
                     <Icon icon={faCaretDown} />
-                </TopicButton>
+                </WeekBox>
             </LeftButton>
             <div>
                 <Icon icon={faEllipsisV} />

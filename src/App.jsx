@@ -53,6 +53,7 @@ function App() {
       <GlobalStyle />
       <Container>
         <Header onClickTitle={handleClickTitle} onToggleTheme={toggleTheme} />
+        <BodyButtons/>
         {selectedPost ? (
           <MainPost post={selectedPost} />
         ) : (
